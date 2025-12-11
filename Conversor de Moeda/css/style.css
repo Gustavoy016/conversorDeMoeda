@@ -1,0 +1,122 @@
+/* Reset e Fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #eef2f3; /* Cinza levemente azulado */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* AQUI ESTÁ A MÁGICA: 
+   Aplicamos o estilo de cartão no <main> para agrupar tudo 
+*/
+main {
+    background-color: #fff;
+    width: 90%;
+    max-width: 380px; /* Largura controlada para não ficar esticado */
+    padding: 2rem;    /* Espaçamento interno */
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaço entre o formulário e o resultado */
+}
+
+/* Removemos estilos da .container para ela não conflitar */
+.container {
+    width: 100%;
+}
+
+/* Ajuste dos inputs */
+.user-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px; /* Altura do input mais equilibrada */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+}
+
+input:focus, select:focus {
+    border-color: #6c5ce7; /* Roxo moderno */
+    background-color: #fff;
+}
+
+/* Botão mais elegante */
+#bnt {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe); /* Gradiente */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#bnt:hover {
+    transform: translateY(-2px); /* Efeito de "subir" levemente */
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+}
+
+#bnt:active {
+    transform: translateY(0);
+}
+
+/* Área de Resultado Integrada */
+.display-res {
+    width: 100%;
+}
+
+.resultado {
+    background-color: #f0f3ff;
+    border: 1px dashed #6c5ce7; /* Borda tracejada estilosa */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    animation: slideUp 0.4s ease-out;
+}
+
+.resultado p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+/* Destaque do valor final */
+.resultado p:last-child {
+    color: #6c5ce7;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-top: 5px;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
